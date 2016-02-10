@@ -22,7 +22,7 @@
 		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-1/material-design-iconic-font.min.css?1421434286" />
 		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-1/libs/summernote/summernote.css?1425218701" />
   </head>
-	<body class="menubar-hoverable  menubar-pin ">
+	<body class="menubar-hoverable menubar-pin menubar-first">
 
 		<!-- BEGIN HEADER jspf-->
 		<%@ include file="/WEB-INF/jspf/headerbar.jspf" %>

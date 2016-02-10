@@ -22,7 +22,7 @@
 		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-1/material-design-iconic-font.min.css?1421434286" />
 		<link type="text/css" rel="stylesheet" href="../../assets/css/theme-1/libs/summernote/summernote.css?1425218701" />
   </head>
-	<body class="menubar-hoverable  menubar-pin ">
+	<body class="menubar-hoverable menubar-pin menubar-first">
 
 		<!-- BEGIN HEADER jspf-->
 		<%@ include file="/WEB-INF/jspf/headerbar.jspf" %>
@@ -36,31 +36,47 @@
 			</div><!--end .offcanvas-->
 			<!-- END OFFCANVAS LEFT -->
 
-      <!-- BEGIN CONTENT-->
-			<div id="content">
+			<!-- BEGIN CONTENT-->
+			<div id="content"  >
 				<section>
-					<div class="section-header">
-						<ol class="breadcrumb">
-							<li class="active">카테고리</li>
-						</ol>
-					</div>
-					<div class="section-body contain-lg">
+					<form:form commandName="postForm">
+					<div class="section-body contain-lg" style="max-width:850px!important; min-width:600px!important;">
+						<!-- BEGIN INTRO -->
+						<div class="row">
+							<div class="col-lg-12">
+								<h1 class="text-primary">게시판 </h1>
+							</div><!--end .col -->
+							<div class="col-lg-12">
+								<article class="margin-bottom-xxl">
+									<p class="lead">
+										카페 게시글 목록입니다.
+									<a href="/board/write" class="btn ink-reaction btn-primary" style="float:right;">글쓰기</a>
+									</p>
+				
+									
+								</article>
+							</div><!--end .col -->
+						</div><!--end .row -->
+						<!-- END INTRO -->
+						<!-- BEGIN RESPONSIVE TABLE 1 -->
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card" style="min-height:600px;">
+									<div class="card-body">
+
 						<form:form commandName="postForm">
 						<!-- BEGIN SUMMERNOTE -->
 						<div class="row">
 							<div class="col-lg-12">
-								<h2 class="text-primary">글쓰기</h2>
-							</div><!--end .col -->
-							<div class="col-lg-8">
 								<p class="lead">
-									제목&nbsp;
-									<form:input path="title"/>
+									<span style="float:left; margin:5px;">제목</span>
+									<form:input path="title" style="width:80%;"/>
 								</p>
 							</div><!--end .col -->
 						</div><!--end .row -->
 						<div class="card" >
-							<div class="card-body no-padding" >
-								<form:textarea path="content" id="summernote" />
+							<div class="card-body no-padding" style="height:600px!important; overflow:auto;"  >
+								<form:textarea path="content" id="summernote"></form:textarea>
 							</div><!--end .card-body -->
 						</div><!--end .card -->
 						<!-- END SUMMERNOTE -->
@@ -70,10 +86,62 @@
 						</div>
 						</form:form>
 
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+						</div><!--end .row -->
+						<!-- END RESPONSIVE TABLE 1 -->
+
 					</div><!--end .section-body -->
+					</form:form>
 				</section>
+
+
+
 			</div><!--end #content-->
 			<!-- END CONTENT -->
+
+
+
+
+<!--       BEGIN CONTENT -->
+<!-- 			<div id="content"> -->
+<!-- 				<section> -->
+<!-- 					<div class="section-header"> -->
+<!-- 						<ol class="breadcrumb"> -->
+<!-- 							<li class="active">카테고리</li> -->
+<!-- 						</ol> -->
+<!-- 					</div> -->
+<!-- 					<div class="section-body contain-lg"> -->
+<%-- 						<form:form commandName="postForm"> --%>
+<!-- 						BEGIN SUMMERNOTE -->
+<!-- 						<div class="row"> -->
+<!-- 							<div class="col-lg-12"> -->
+<!-- 								<h2 class="text-primary">글쓰기</h2> -->
+<!-- 							</div>end .col -->
+<!-- 							<div class="col-lg-8"> -->
+<!-- 								<p class="lead"> -->
+<!-- 									제목&nbsp; -->
+<%-- 									<form:input path="title"/> --%>
+<!-- 								</p> -->
+<!-- 							</div>end .col -->
+<!-- 						</div>end .row -->
+<!-- 						<div class="card" > -->
+<!-- 							<div class="card-body no-padding" > -->
+<%-- 								<form:textarea path="content" id="summernote" /> --%>
+<!-- 							</div>end .card-body -->
+<!-- 						</div>end .card -->
+<!-- 						END SUMMERNOTE -->
+<!-- <!-- 						<hr class="ruler-xxl"/> --> -->
+<!-- 						<div class ="row" style="text-align:center;font-size:13px;"> -->
+<!-- 							<input type ="submit" class="btn ink-reaction btn-primary" value="작성"  /> -->
+<!-- 						</div> -->
+<%-- 						</form:form> --%>
+
+<!-- 					</div>end .section-body -->
+<!-- 				</section> -->
+<!-- 			</div>end #content -->
+<!-- 			<!-- END CONTENT --> -->
 
 			<!-- BEGIN MENUBAR jspf-->
 			<%@ include file="/WEB-INF/jspf/menubar.jspf" %>

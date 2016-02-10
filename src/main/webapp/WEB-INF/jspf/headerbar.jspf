@@ -11,7 +11,7 @@
         <li class="header-nav-brand" >
           <div class="brand-holder">
             <a href="/board">
-              <span class="text-lg text-bold text-primary">S CAFE</span>
+              <span class="text-lg text-bold text-primary">&nbsp;</span>
             </a>
           </div>
         </li>
@@ -74,7 +74,7 @@
             <img src="../../assets/img/avatar1.jpg?1403934956" alt="" />
             <span class="profile-info">
               <sec:authentication property="principal.username"/>
-              <small><sec:authentication property="principal.username"/></small>
+              <small>USERROLE</small>
             </span>
           </a>
           <ul class="dropdown-menu animation-dock">

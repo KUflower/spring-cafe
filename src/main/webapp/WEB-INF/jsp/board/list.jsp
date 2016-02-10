@@ -12,8 +12,7 @@
 		}
 	</style>
 </head>
-	<body class="menubar-hoverable  menubar-pin ">
-
+	<body class="menubar-hoverable menubar-pin menubar-first">
 		<!-- BEGIN HEADER jspf-->
 		<%@ include file="/WEB-INF/jspf/headerbar.jspf" %>
 		<!-- END HEADER jspf-->

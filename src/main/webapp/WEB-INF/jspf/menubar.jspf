@@ -5,11 +5,11 @@
     <div>
       <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
         <i class="fa fa-bars"></i>
-      </a>o
+      </a>
     </div>
     <div class="expanded">
-      <a href="../../html/dashboards/dashboard.html">
-        <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+      <a href="/board">
+        <span class="text-lg text-bold text-primary ">Simple&nbsp;CAFE</span>
       </a>
     </div>
   </div>
@@ -40,11 +40,11 @@
       <li class="gui-folder expanded">
         <a>
           <div class="gui-icon"><i class="md md-computer"></i></div>
-          <span class="title">About Coding</span>
+          <span class="title">About Coding(disbaled)</span>
         </a>
         <!--start submenu -->
         <ul>
-          <li class="gui-folder expanded">
+          <li class="gui-folder">
             <a href="javascript:void(0);">
               <span class="title">Language</span>
             </a>
