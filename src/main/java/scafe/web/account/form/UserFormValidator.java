@@ -12,8 +12,8 @@ import scafe.service.UserService;
 public class UserFormValidator implements Validator{
 
 	public static final String KOREAN_PATTERN = "^[가-힣]*$";
-//	private static final String EMAIL_PATTERN1 = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)";
-	public static final String EMAIL_PATTERN2 = "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+	public static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+//	public static final String EMAIL_PATTERN2 = "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 	public static final String NUMBER_PATTERN = "[0-9]+";	
 	
 	@Autowired
@@ -44,12 +44,8 @@ public class UserFormValidator implements Validator{
 			errors.rejectValue("email", "field.email.exist");
 		}			
 		
-//			if(!form1.getCustEmail2().matches(EMAIL_PATTERN2)){
-//				// check domain of mail
-//				System.out.println("check domain of mail: "+form1.getCustEmail2().matches(EMAIL_PATTERN2));
-//				errors.rejectValue("custEmail2", "field.email");
-//			}
-					
-		
+		if(!user.getEmail().matches(EMAIL_PATTERN)){
+			errors.rejectValue("email", "field.email");
+		}
 	}	
 }
