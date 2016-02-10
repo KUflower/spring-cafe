@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- BEGIN MENUBAR-->
+<div id="menubar" class="menubar-inverse ">
+  <div class="menubar-fixed-panel">
+    <div>
+      <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+        <i class="fa fa-bars"></i>
+      </a>o
+    </div>
+    <div class="expanded">
+      <a href="../../html/dashboards/dashboard.html">
+        <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+      </a>
+    </div>
+  </div>
+  <div class="menubar-scroll-panel">
+
+    <!-- BEGIN MAIN MENU -->
+    <ul id="main-menu" class="gui-controls">
+
+      <!-- BEGIN DASHBOARD -->
+      <li>
+        <a href="/board" >
+          <div class="gui-icon"><i class="md md-home"></i></div>
+          <span class="title">Dashboard</span>
+        </a>
+      </li><!--end /menu-li -->
+      <!-- END DASHBOARD -->
+
+      <!-- BEGIN FORMS -->
+      <li>
+        <a href="/upgrade">
+          <div class="gui-icon"><span class="glyphicon glyphicon-list-alt"></span></div>
+          <span class="title">등업게시판</span>
+        </a>
+      </li><!--end /menu-li -->
+      <!-- END FORMS -->
+
+      <!-- BEGIN PAGES -->
+      <li class="gui-folder expanded">
+        <a>
+          <div class="gui-icon"><i class="md md-computer"></i></div>
+          <span class="title">About Coding</span>
+        </a>
+        <!--start submenu -->
+        <ul>
+          <li class="gui-folder expanded">
+            <a href="javascript:void(0);">
+              <span class="title">Language</span>
+            </a>
+            <!--start submenu -->
+            <ul>
+              <li><a href="#" ><span class="title">Java</span></a></li>
+              <li><a href="#" ><span class="title">Spring</span></a></li>
+              <li><a href="#" ><span class="title">C</span></a></li>
+              <li><a href="#" ><span class="title">C++</span></a></li>
+              <li><a href="#" ><span class="title">Python</span></a></li>
+            </ul><!--end /submenu -->
+          </li><!--end /menu-li -->
+          <li class="gui-folder">
+            <a href="javascript:void(0);">
+              <span class="title">Search</span>
+            </a>
+            <!--start submenu -->
+            <ul>
+              <li><a href="../../html/pages/search/results-text.html" ><span class="title">Results - Text</span></a></li>
+              <li><a href="../../html/pages/search/results-text-image.html" ><span class="title">Results - Text and Image</span></a></li>
+            </ul><!--end /submenu -->
+          </li><!--end /menu-li -->
+          <li class="gui-folder">
+            <a href="javascript:void(0);">
+              <span class="title">Blog</span>
+            </a>
+            <!--start submenu -->
+            <ul>
+              <li><a href="../../html/pages/blog/masonry.html" ><span class="title">Blog masonry</span></a></li>
+              <li><a href="../../html/pages/blog/list.html" ><span class="title">Blog list</span></a></li>
+              <li><a href="../../html/pages/blog/post.html" ><span class="title">Blog post</span></a></li>
+            </ul><!--end /submenu -->
+          </li><!--end /menu-li -->
+        </ul><!--end /submenu -->
+      </li><!--end /menu-li -->
+      <!-- END FORMS -->
+
+      <!-- BEGIN CHARTS -->
+      <li>
+        <a href="/admin/list" >
+          <div class="gui-icon"><i class="md md-assessment"></i></div>
+          <span class="title">관리자</span>
+        </a>
+      </li><!--end /menu-li -->
+      <!-- END CHARTS -->
+
+    </ul><!--end .main-menu -->
+    <!-- END MAIN MENU -->
+
+    <div class="menubar-foot-panel">
+      <small class="no-linebreak hidden-folded">
+        <span class="opacity-75">contact</span> <strong>94sangmi@gmail.com</strong>
+      </small>
+    </div>
+  </div><!--end .menubar-scroll-panel-->
+</div><!--end #menubar-->
+<!-- END MENUBAR -->
