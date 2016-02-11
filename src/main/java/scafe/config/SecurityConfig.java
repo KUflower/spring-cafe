@@ -47,34 +47,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 //Configures url based authorization
                 .and()
                     .authorizeRequests()
-                        //Anyone can access the urls
                     	.antMatchers("/admin/**").hasRole("ADMIN")
-                        //.antMatchers("mg/**").permitAll()
-//                    	.antMatchers("/mypage/**").hasRole("USER")
-//                    	.antMatchers("/my/**").hasRole("USER")
-//                    	.antMatchers("/invest/check").hasRole("USER")
                     	.antMatchers("/**/write*", "/**/edit*", "/**/delete*", "/upgrade/**").access("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('USER')")
                     	.antMatchers(
                     			"/**", "/board/post/**"
                         ).permitAll();
                         //The rest of the our application is protected.
 
-		
-		// @formatter:off
-//		http
-//			.formLogin()
-//				.loginPage("/user/login")
-//				.defaultSuccessUrl("/board")
-//			.and()
-//				.logout()
-//					.logoutUrl("/user/logout")
-//					.deleteCookies("JSESSIONID")
-//					.logoutSuccessUrl("/board")
-//			.and()
-//				.authorizeRequests()
-//					.antMatchers("/**/write*", "/**/edit*", "/**/delete*").authenticated()
-//					.antMatchers("/**", "/board/post/**").permitAll();
-		// @formatter:on
 	}
 
 	@Override
@@ -112,55 +91,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         return new ScafeUserDetailsService();
     }
 
-    @Bean
-    public AuthenticationFailureHandler failHandler() {
-        return new CustomAuthenticationFailureHandler();
-    }
-    
-    public class CustomAuthenticationFailureHandler implements AuthenticationFailureHandler{
-
-		@Override
-		public void onAuthenticationFailure(HttpServletRequest request,
-				HttpServletResponse response, AuthenticationException exception)
-				throws IOException, ServletException {
-            request.getSession().setAttribute(WebAttributes.AUTHENTICATION_EXCEPTION, exception);
-
-			if("i".equals(request.getParameter("t"))){
-				response.sendRedirect("/invest/step0");
-			}else{
-				response.sendRedirect("/signin");
-			}
-		}
-    	
-    }
-    
-    public class CustomLoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
-        public CustomLoginSuccessHandler(String defaultTargetUrl) {
-            setDefaultTargetUrl(defaultTargetUrl);
-        }
-
-        @Override
-        public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, 
-        	Authentication authentication) throws ServletException, IOException {
-        	
-			if("i".equals(request.getParameter("t"))){
-                getRedirectStrategy().sendRedirect(request, response, "/invest/check");
-			}else{
-				HttpSession session = request.getSession();
-	            if (session != null) {
-	                String redirectUrl = (String) session.getAttribute("prevPage");
-	                if (redirectUrl != null) {
-	                    session.removeAttribute("prevPage");
-	                    getRedirectStrategy().sendRedirect(request, response, redirectUrl);
-	                } else {
-	                    super.onAuthenticationSuccess(request, response, authentication);
-	                }
-	            } else {
-	                super.onAuthenticationSuccess(request, response, authentication);
-	            }
-	           
-			}
-        }
-    }
-     
 }
